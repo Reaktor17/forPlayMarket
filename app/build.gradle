@@ -12,21 +12,14 @@ android {
         versionName "0.003"
     }
 
-    signingConfigs {
-        release {
-            storeFile file("androidKeystore.jks")
-            storePassword "ARP_terminal_17"
-            keyAlias "forPlayMarket"
-            keyPassword "Qwerty_7"
-        }
-    }
-
     buildTypes {
         release {
             minifyEnabled false
             shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.release
+
+            // use gradle.properties
+//            signingConfig signingConfigs.release
         }
     }
 }
@@ -36,4 +29,8 @@ dependencies {
     compile 'com.android.support:appcompat-v7:22.0.0'
 
     compile 'com.jakewharton:butterknife:6.1.0'
+}
+
+if(project.hasProperty("signingPath") && new File(project.property("signingPath") + "/forPlayMarket.gradle").exists()) {
+    apply from: project.property("signingPath") + "/forPlayMarket.gradle";
 }
