@@ -8,8 +8,8 @@ android {
         applicationId "drg.app.forplaymarket"
         minSdkVersion 15
         targetSdkVersion 22
-        versionCode 2
-        versionName "1.0"
+        versionCode 3
+        versionName "0.003"
     }
 
     signingConfigs {
@@ -23,7 +23,7 @@ android {
 
     buildTypes {
         release {
-            minifyEnabled true
+            minifyEnabled false
             shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.release
