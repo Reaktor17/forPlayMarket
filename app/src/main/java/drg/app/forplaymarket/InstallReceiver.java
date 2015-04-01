@@ -14,10 +14,10 @@ public class InstallReceiver extends BroadcastReceiver {
 
 	@Override
 	public void onReceive(Context context, Intent intent) {
-		Log.d(getClass().getSimpleName(), "onReceive");
+		Log.d("InstallReceiver", "onReceive");
 		String referrer = intent.getStringExtra("referrer");
 		if (!TextUtils.isEmpty(referrer)) {
-			Log.d(getClass().getSimpleName(), referrer);
+			Log.d("InstallReceiver", referrer);
 			App.setRef(referrer);
 		}
 	}
